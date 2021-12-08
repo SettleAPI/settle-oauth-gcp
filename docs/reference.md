@@ -5,7 +5,7 @@
 - Java: <https://github.com/googleapis/google-auth-library-java>
 - .NET: <https://github.com/googleapis/google-api-dotnet-client>
 - Node.js <https://github.com/googleapis/google-auth-library-nodejs>
-- PHP: <https://github.com/googleapis/google-auth-library-nodejs>
+- PHP: <https://github.com/googleapis/google-auth-library-php>
 - Ruby: <https://github.com/googleapis/google-auth-library-ruby>
 
 !!! WARNING

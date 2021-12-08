@@ -30,5 +30,5 @@ def flow_demo() -> None:
     server_side.verify_id_token(token=token, audience=endpoint_url)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     flow_demo()

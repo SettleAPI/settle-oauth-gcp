@@ -1,4 +1,5 @@
 import google.auth.transport.requests
+import google.oauth2.service_account
 
 
 def get_id_token_from_service_account(svc_account_file: str, target_audience: str):
