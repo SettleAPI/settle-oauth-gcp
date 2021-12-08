@@ -1,3 +1,5 @@
+import json
+
 import client_side
 import server_side
 
@@ -5,6 +7,9 @@ import server_side
 def flow_demo() -> None:
     endpoint_url = "https://company.com/api/v1/sample-endpoint"
     sa_private_key_path = "./sa-private-key.json"
+
+    with open(sa_private_key_path) as f:
+        sa_email = json.loads(f.read())["client_email"]
 
     print(
         "====================",
@@ -27,7 +32,7 @@ def flow_demo() -> None:
         "Decoding the token...",
         sep="\n",
     )
-    server_side.verify_id_token(token=token, audience=endpoint_url)
+    server_side.verify_id_token(token=token, sa_email=sa_email, audience=endpoint_url)
 
 
 if __name__ == "__main__":

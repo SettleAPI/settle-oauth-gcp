@@ -8,7 +8,7 @@ You can learn from this guide how to use OAuth via a Google server to:
 We are using Google Cloud Platform (GCP) service accounts and
 authorization servers to secure endpoints in our APIs.
 
-We propose that you use the same principles to secure endpoints in our APIs.
+We propose that you use the same principles to secure endpoints in your APIs.
 
 After reading the docs for how to connect, consider taking a look at
 [the Python demo for the entire flow](python_demo.md).

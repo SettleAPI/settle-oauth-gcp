@@ -16,7 +16,7 @@ import google.auth.transport.requests
 # to the service that is sending the request.
 
 
-def verify_id_token(token: str, audience: Optional[str] = None) -> bool:
+def verify_id_token(token: str, sa_email: str, audience: Optional[str] = None) -> bool:
     request = google.auth.transport.requests.Request()
     try:
         id_info = google.oauth2.id_token.verify_oauth2_token(
@@ -31,4 +31,4 @@ def verify_id_token(token: str, audience: Optional[str] = None) -> bool:
 
     print("Token in decoded form, verified with aud:", id_info, sep="\n")
 
-    return id_info["email"] == SA_EMAIL
+    return id_info["email"] == sa_email

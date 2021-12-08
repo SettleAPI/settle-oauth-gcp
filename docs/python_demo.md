@@ -4,8 +4,8 @@ The demo will attempt to follow through the OAuth flow by:
   using a GCP service account
 - verifying and decoding the token on the server side
 
-As such, you need to have a service account in GCP
-and an associated key `.json` file downloaded as `sa-private-key.json`
+For this you need a service account in GCP
+and an associated `.json` key file downloaded as `sa-private-key.json`
 in the root directory of the repo.
 
 ```shell

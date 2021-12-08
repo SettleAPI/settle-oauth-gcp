@@ -1,16 +1,21 @@
-In this scenario, the `Client Service` is your service and the `API Server`
+In this scenario, the *Client Service* is your service and the *API Server*
 is the Settle API server.
 
-To access a Settle endpoint, your service needs a `service account key`
-and an `audience`, i.e. the URL of the Settle API server endpoint.
+To access a Settle endpoint, your service needs a *service account key*
+and an *audience*, which is the URL of the Settle API server endpoint.
 
-After creating a `service account email` in GCP, you can obtain
-an associated `service account key` in GCP.
+After creating a *service account email* in GCP, you can obtain
+an associated *service account key* in GCP.
 
-You must register your `service account email` in the Settle Business Portal before
-you can use its associated `service account key` to access the Settle API Server.
+You must supply your *service account email* to Settle before
+you can use its associated *service account key* to access the Settle API Server.
+We will register it in our system and inform you when it becomes active.
 
-### Creating a GCP service account and key
+When connecting to the Settle API server,
+you will transmit the token as part of the request headers
+in the `Authorization: Bearer <TOKEN>` form.
+
+## Creating a GCP service account and key
 
 To connect to Settle, you'll need a GCP service account.
 
@@ -19,7 +24,7 @@ After creating the service account, you'll need to create a key to use it in you
 !!! IMPORTANT
     The key will only be provided at creation time, so make sure to save it then.
 
-Settle provides access to two environments: `production` and `sandbox`.
+Settle provides access to two environments: *production* and *sandbox*.
 You will thus need to create two service accounts, one for each environment.
 While you could have both service accounts in a single GCP project:
 
@@ -56,10 +61,11 @@ To create a project, a service account and its key, use the script below in
 Linux or the [GCP console](https://cloud.google.com/shell).
 
 ```shell
-PROJECT_UUID=$(uuidgen | sed 's/-//g')
 # project names are unique across GCP, must be between 6 and 30 characters,
 #  and may contain only digits, lowercase letters and dashes
-PROJECT_ID=${PROJECT_UUID:1:30}
+#  a typical pattern is {COMPANY}-{PROJECT}-{ENVIRONMENT}
+#  e.g. microcorp-project42-sandbox
+read PROJECT_ID
 SA_NAME="test-service"
 gcloud projects create "${PROJECT_ID}"
 gcloud iam service-accounts create "${SA_NAME}" --project "${PROJECT_ID}"
@@ -76,7 +82,11 @@ You may also use the [GCP console](https://console.cloud.google.com/) graphical 
 !!! TODO
     Create point and click guide for graphical interface.
 
-### Sample client implementation in Python
+## Connecting
+
+
+
+## Sample client implementation in Python
 
 !!! TODO
     Description
