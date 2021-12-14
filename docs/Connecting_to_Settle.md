@@ -4,7 +4,7 @@ is the Settle API server.
 To access a Settle endpoint, your service needs a *service account key*
 and an *audience*, which is the URL of the Settle API server endpoint.
 
-After creating a *service account email* in GCP, you can obtain
+After creating a *service account* in GCP, you can obtain
 an associated *service account key* in GCP.
 
 You must supply your *service account email* to Settle before
