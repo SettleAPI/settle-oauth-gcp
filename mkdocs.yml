@@ -1,0 +1,171 @@
+site_name: Settle OAuth with GCP
+site_url: https://SettleAPI.github.io/settle-oauth-gcp
+site_author: Settle <support@settle.eu>
+repo_url: https://github.com/SettleAPI/settle-oauth-gcp
+repo_name: SettleAPI/settle-oauth-gcp
+edit_uri: edit/master/docs
+docs_dir: docs
+site_dir: site
+# gh-deploy command settings
+remote_branch: gh-pages
+remote_name: origin
+
+use_directory_urls: false
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        # icon: material/toggle-switch-off-outline
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: orange
+      toggle:
+        # icon: material/toggle-switch
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.indexes
+    - navigation.top
+
+# If nothing is specified, navigation will be implicitly created using
+# capitalized direcotry names and the H1 of each file, sorted alphanumerically
+# used to be done using 'pages', now deprecated, new syntax is 'nav'
+#nav:
+#  - Home: 'install.md'
+
+markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
+  # see link above for all available extensions
+
+  # https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+  # add block-styled side content, e.g. summaries, notes, hints or warnings
+  - markdown.extensions.admonition:
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/details/
+  # support collapsible blocks, might not compatible with IE and Edge
+  - pymdownx.details:
+
+  # https://python-markdown.github.io/extensions/toc/
+  - markdown.extensions.toc:
+      # https://squidfunk.github.io/mkdocs-material/extensions/permalinks/
+      # inserts anchor at end of each headline to provide link to a subpart of the document
+      permalink: true
+      # keep at 1 for H1 in document to be the title when specified in mkdocs.yml
+      # if set to 2 pushes H1 to H2, if set to 3 pushes H1 to H3
+      # baselevel: 1
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/
+  - pymdownx.tabbed:
+
+  # https://squidfunk.github.io/mkdocs-material/extensions/footnotes/
+  - markdown.extensions.footnotes:
+
+  # https://python-markdown.github.io/extensions/abbreviations/
+  - markdown.extensions.abbr:
+
+  # https://python-markdown.github.io/extensions/definition_lists/
+  - markdown.extensions.def_list:
+
+  # https://python-markdown.github.io/extensions/smarty/
+  - markdown.extensions.smarty:
+
+  # https://python-markdown.github.io/extensions/attr_list/
+  # define attributes on the various HTML elements in Markdown’s output
+  # DEPENDENCY: allows modifying style for progress bars
+  - markdown.extensions.attr_list:
+
+  # https://python-markdown.github.io/extensions/tables/
+  # Tested and was not necessary for tables to render
+  # - markdown.extensions.tables:
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/keys/
+  - pymdownx.keys:
+      separator: "\uff0b"
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/caret/
+  # https://facelessuser.github.io/pymdown-extensions/extensions/tilde/
+  # NOTICE - replaces basic Markdown ~text~ strikethrough with ~~text~~
+  - pymdownx.tilde:
+  - pymdownx.caret:
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/mark/
+  - pymdownx.mark:
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/
+  - pymdownx.smartsymbols:
+
+  #  https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/
+  - pymdownx.tasklist:
+      # custom_checkbox: true
+      clickable_checkbox: true
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+  - pymdownx.magiclink:
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
+  # Nest fences under blockquotes, lists, diagrams or other block elements and custom fences
+  # Create tabbed fenced code blocks
+  # Specify custom fences for flowcharts, sequence diagrams, or other custom blocks
+  - pymdownx.superfences:
+    # Mermaid integration from https://github.com/squidfunk/mkdocs-material/issues/693#issuecomment-411885426
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
+  - pymdownx.highlight:
+      # https://github.com/squidfunk/mkdocs-material/issues/138#issuecomment-276567696
+      # Code highlighting, includes php fix so code is not required to start with <? or <?php
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/
+  # inline code highlighting
+  - pymdownx.inlinehilite:
+
+  # https://facelessuser.github.io/pymdown-extensions/extensions/emoji/
+  # this makes all emoji show up properly
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      alt: short
+      options:
+          attributes:
+              align: top
+              height: 20px
+              width: 20px
+          # image_path: https://assets-cdn.github.com/images/icons/emoji/unicode/
+          # non_standard_image_path: https://assets-cdn.github.com/images/icons/emoji/
+
+  - pymdownx.snippets:
+      base_path: './'
+      check_paths: true
+
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        theme: 'dark'
+
+# https://cdnjs.com/libraries/mermaid
+#extra_css:
+#  # Custom CSS, file should be in /docs/ or the custom documents directory
+#  - extra/extra.css
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
