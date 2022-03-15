@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://SettleAPI.github.io/settle-oauth-gcp/index.html</loc>
+         <lastmod>2022-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://SettleAPI.github.io/settle-oauth-gcp/Accepting_connections_from_Settle.html</loc>
+         <lastmod>2022-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://SettleAPI.github.io/settle-oauth-gcp/Connecting_to_Settle.html</loc>
+         <lastmod>2022-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://SettleAPI.github.io/settle-oauth-gcp/python_demo.html</loc>
+         <lastmod>2022-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://SettleAPI.github.io/settle-oauth-gcp/reference.html</loc>
+         <lastmod>2022-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
